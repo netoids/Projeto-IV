@@ -1,5 +1,5 @@
 from PySimpleGUI import PySimpleGUI as sg
-from projeto import entrada, createBucket
+from projeto import backup, entrada, createBucket
 
 createBucket()
 
@@ -10,7 +10,7 @@ def TelaPrincipal():
         [sg.Text("Digite o texto para ser traduzido e convertido em audio")],
         [sg.InputText(key='textoIn')],
         [sg.Text(key='confirmacao')],
-        [sg.Button("Converter"), sg.Button("Fechar")]
+        [sg.Button("Converter"),sg.Button('Backup'), sg.Button("Fechar")]
     ]
     return sg.Window('Projeto-IV LinaldoQuirino', layout = layout, finalize=True)
 
@@ -37,4 +37,8 @@ while True:
         break
     if window == janela2 and event == 'Fechar':
         janela2.hide()
+    if window == janela1 and event == 'Backup':
+        backup()
+
+        
 
