@@ -43,7 +43,3 @@ def backup():
     file = open("AudioBackup.mp3", "wb")
     file.write(response['Body'].read())
     file.close()
-
-
-entrada('adoro comer pizza nos fins de semana')
-backup()
